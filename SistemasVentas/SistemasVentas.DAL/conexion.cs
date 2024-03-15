@@ -13,7 +13,7 @@ namespace SistemasVentas.DAL
 
         public static string CONECTAR
         {
-            get { return @"Data Source=(local); Initial Catalog=TIENDA_VENTAS_BD; Integrated Security=True; TrustServerCertificate=true;"; }
+            get { return @"Data Source=LAPTOP-KK0M3A5I\SQLEXPRESS; Initial Catalog=TIENDA_VENTAS_BD; Integrated Security=True; TrustServerCertificate=true;"; }
             //get { return ConfigurationManager.ConnectionStrings["cadena"].ToString(); }
         }
         public static DataSet EjecutarDataSet(string consulta)
