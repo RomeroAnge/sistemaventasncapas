@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -37,18 +38,34 @@
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 12);
+            dataGridView1.Location = new Point(14, 16);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridView1.Size = new Size(464, 328);
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(530, 554);
             dataGridView1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.DialogResult = DialogResult.OK;
+            button1.Location = new Point(429, 582);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 29);
+            button1.TabIndex = 1;
+            button1.Text = "SELECCIONAR";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // PersonaListarVista
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(488, 352);
+            ClientSize = new Size(558, 623);
+            Controls.Add(button1);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "PersonaListarVista";
             Text = "PersonaListarVista";
             Load += PersonaListarVista_Load;
@@ -59,5 +76,6 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private Button button1;
     }
 }
