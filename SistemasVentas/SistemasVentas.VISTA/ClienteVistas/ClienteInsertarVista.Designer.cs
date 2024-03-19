@@ -36,10 +36,12 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button2
             // 
+            button2.DialogResult = DialogResult.Cancel;
             button2.Location = new Point(373, 269);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
@@ -49,6 +51,7 @@
             // 
             // button1
             // 
+            button1.DialogResult = DialogResult.OK;
             button1.Location = new Point(145, 269);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
@@ -101,15 +104,26 @@
             label1.AutoSize = true;
             label1.Location = new Point(40, 41);
             label1.Name = "label1";
-            label1.Size = new Size(89, 20);
+            label1.Size = new Size(74, 20);
             label1.TabIndex = 12;
-            label1.Text = "IDPERSONA";
+            label1.Text = "PERSONA";
+            // 
+            // button3
+            // 
+            button3.Location = new Point(495, 38);
+            button3.Name = "button3";
+            button3.Size = new Size(114, 29);
+            button3.TabIndex = 33;
+            button3.Text = "SELECCIONAR";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // ClienteInsertarVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(513, 345);
+            ClientSize = new Size(642, 345);
+            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox3);
@@ -134,5 +148,6 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Button button3;
     }
 }

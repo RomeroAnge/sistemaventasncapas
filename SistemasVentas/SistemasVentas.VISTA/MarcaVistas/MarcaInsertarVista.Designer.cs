@@ -38,14 +38,14 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(292, 141);
+            textBox2.Location = new Point(177, 140);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(313, 27);
             textBox2.TabIndex = 30;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(292, 57);
+            textBox1.Location = new Point(177, 56);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(313, 27);
             textBox1.TabIndex = 29;
@@ -53,7 +53,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(213, 146);
+            label3.Location = new Point(98, 145);
             label3.Name = "label3";
             label3.Size = new Size(64, 20);
             label3.TabIndex = 27;
@@ -62,7 +62,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(207, 62);
+            label1.Location = new Point(92, 61);
             label1.Name = "label1";
             label1.Size = new Size(70, 20);
             label1.TabIndex = 25;
@@ -70,7 +70,8 @@
             // 
             // button2
             // 
-            button2.Location = new Point(502, 261);
+            button2.DialogResult = DialogResult.Cancel;
+            button2.Location = new Point(387, 260);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
             button2.TabIndex = 24;
@@ -79,7 +80,8 @@
             // 
             // button1
             // 
-            button1.Location = new Point(236, 261);
+            button1.DialogResult = DialogResult.OK;
+            button1.Location = new Point(121, 260);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 23;
@@ -91,7 +93,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(573, 450);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
             Controls.Add(label3);

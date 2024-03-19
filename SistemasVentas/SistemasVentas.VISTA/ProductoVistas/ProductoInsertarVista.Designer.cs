@@ -44,6 +44,8 @@
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             textBox7 = new TextBox();
+            button3 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // textBox3
@@ -106,6 +108,7 @@
             // 
             // button2
             // 
+            button2.DialogResult = DialogResult.Cancel;
             button2.Location = new Point(389, 305);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
@@ -115,6 +118,7 @@
             // 
             // button1
             // 
+            button1.DialogResult = DialogResult.OK;
             button1.Location = new Point(139, 305);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
@@ -178,11 +182,33 @@
             textBox7.Size = new Size(313, 27);
             textBox7.TabIndex = 39;
             // 
+            // button3
+            // 
+            button3.Location = new Point(539, 28);
+            button3.Name = "button3";
+            button3.Size = new Size(140, 29);
+            button3.TabIndex = 40;
+            button3.Text = "SELECCIONAR";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(539, 66);
+            button4.Name = "button4";
+            button4.Size = new Size(143, 29);
+            button4.TabIndex = 41;
+            button4.Text = "SELECCIONAR";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // ProductoInsertarVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(587, 357);
+            ClientSize = new Size(808, 357);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(textBox7);
             Controls.Add(textBox4);
             Controls.Add(textBox5);
@@ -222,5 +248,7 @@
         private TextBox textBox5;
         private TextBox textBox6;
         private TextBox textBox7;
+        private Button button3;
+        private Button button4;
     }
 }

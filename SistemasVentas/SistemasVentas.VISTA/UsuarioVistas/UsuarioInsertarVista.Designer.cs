@@ -38,6 +38,7 @@
             label1 = new Label();
             button2 = new Button();
             button1 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -51,8 +52,10 @@
             // 
             textBox3.Location = new Point(164, 141);
             textBox3.Name = "textBox3";
+            textBox3.PasswordChar = '*';
             textBox3.Size = new Size(313, 27);
             textBox3.TabIndex = 31;
+            textBox3.UseSystemPasswordChar = true;
             // 
             // textBox2
             // 
@@ -106,6 +109,7 @@
             // 
             // button2
             // 
+            button2.DialogResult = DialogResult.Cancel;
             button2.Location = new Point(381, 336);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
@@ -115,6 +119,7 @@
             // 
             // button1
             // 
+            button1.DialogResult = DialogResult.OK;
             button1.Location = new Point(141, 336);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
@@ -123,11 +128,22 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // button3
+            // 
+            button3.Location = new Point(521, 36);
+            button3.Name = "button3";
+            button3.Size = new Size(123, 29);
+            button3.TabIndex = 51;
+            button3.Text = "SELECCIONAR";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // UsuarioInsertarVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(599, 450);
+            ClientSize = new Size(674, 450);
+            Controls.Add(button3);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -156,5 +172,6 @@
         private Label label1;
         private Button button2;
         private Button button1;
+        private Button button3;
     }
 }

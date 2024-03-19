@@ -38,6 +38,8 @@
             label2 = new Label();
             label1 = new Label();
             textBox3 = new TextBox();
+            button3 = new Button();
+            button4 = new Button();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -58,6 +60,7 @@
             // 
             // button2
             // 
+            button2.DialogResult = DialogResult.Cancel;
             button2.Location = new Point(358, 262);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
@@ -67,6 +70,7 @@
             // 
             // button1
             // 
+            button1.DialogResult = DialogResult.OK;
             button1.Location = new Point(130, 262);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
@@ -123,11 +127,33 @@
             textBox3.Size = new Size(334, 27);
             textBox3.TabIndex = 44;
             // 
+            // button3
+            // 
+            button3.Location = new Point(581, 54);
+            button3.Name = "button3";
+            button3.Size = new Size(121, 29);
+            button3.TabIndex = 45;
+            button3.Text = "SELECCIONAR";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.Location = new Point(581, 97);
+            button4.Name = "button4";
+            button4.Size = new Size(121, 29);
+            button4.TabIndex = 46;
+            button4.Text = "SELECCIONAR";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // ProveeInsertarVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(590, 450);
+            ClientSize = new Size(807, 450);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(textBox3);
             Controls.Add(dateTimePicker1);
             Controls.Add(label7);
@@ -156,5 +182,7 @@
         private Label label2;
         private Label label1;
         private TextBox textBox3;
+        private Button button3;
+        private Button button4;
     }
 }

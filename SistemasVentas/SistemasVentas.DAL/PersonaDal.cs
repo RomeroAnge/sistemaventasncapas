@@ -26,7 +26,7 @@ namespace SistemasVentas.DAL
             conexion.Ejecutar(consulta);
         }
         Persona p = new Persona();
-        public Persona ObtenerPersonaId(int id)
+        public Persona ObtenerPersonaIdDal(int id)
         {
             string consulta = "select * from persona where idpersona=" + id;
             DataTable tabla = conexion.EjecutarDataTabla(consulta, "asdas");
@@ -39,8 +39,24 @@ namespace SistemasVentas.DAL
                 p.Ci = tabla.Rows[0]["ci"].ToString();
                 p.Correo = tabla.Rows[0]["correo"].ToString();
                 p.Estado = tabla.Rows[0]["estado"].ToString();
+
             }     
             return p;
+        }
+        public void EditarPersonaDal(Persona p)
+        {
+            string consulta = "update persona set nombre='" + p.Nombre + "'," +
+                                                        "apellido='" + p.Apellido + "'," +
+                                                        "telefono='" + p.Telefono + "'," +
+                                                        "ci='" + p.Ci + "'," +
+                                                        "correo='" + p.Correo + "'" +
+                                                "where idpersona=" + p.IdPersona;
+            conexion.Ejecutar(consulta);
+        }
+        public void EliminarPersonaDal(int id)
+        {
+            string consulta = "delete from persona where idpersona=" + id;
+            conexion.Ejecutar(consulta);
         }
     }
     

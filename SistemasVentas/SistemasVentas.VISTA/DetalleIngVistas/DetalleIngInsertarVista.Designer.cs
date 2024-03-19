@@ -44,10 +44,13 @@
             textBox6 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             textBox7 = new TextBox();
+            button4 = new Button();
+            button3 = new Button();
             SuspendLayout();
             // 
             // button2
             // 
+            button2.DialogResult = DialogResult.Cancel;
             button2.Location = new Point(400, 313);
             button2.Name = "button2";
             button2.Size = new Size(94, 29);
@@ -57,6 +60,7 @@
             // 
             // button1
             // 
+            button1.DialogResult = DialogResult.OK;
             button1.Location = new Point(172, 313);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
@@ -179,11 +183,33 @@
             textBox7.Size = new Size(334, 27);
             textBox7.TabIndex = 28;
             // 
+            // button4
+            // 
+            button4.Location = new Point(566, 77);
+            button4.Name = "button4";
+            button4.Size = new Size(116, 29);
+            button4.TabIndex = 48;
+            button4.Text = "SELECCIONAR";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(566, 33);
+            button3.Name = "button3";
+            button3.Size = new Size(116, 29);
+            button3.TabIndex = 47;
+            button3.Text = "SELECCIONAR";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // DetalleIngInsertarVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(606, 450);
+            ClientSize = new Size(716, 450);
+            Controls.Add(button4);
+            Controls.Add(button3);
             Controls.Add(textBox7);
             Controls.Add(dateTimePicker1);
             Controls.Add(textBox6);
@@ -202,6 +228,7 @@
             Controls.Add(label1);
             Name = "DetalleIngInsertarVista";
             Text = "DetalleIngInsertarVista";
+            Load += DetalleIngInsertarVista_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -224,5 +251,7 @@
         private TextBox textBox6;
         private DateTimePicker dateTimePicker1;
         private TextBox textBox7;
+        private Button button4;
+        private Button button3;
     }
 }
