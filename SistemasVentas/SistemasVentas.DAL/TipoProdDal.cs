@@ -18,8 +18,7 @@ namespace SistemasVentas.DAL
         }
         public void InsertarTipoProdDal(TipoProd tipoprod)
         {
-            string consulta = "insert into tipoprod values('" + tipoprod.Nombre + "','"
-                                                        + tipoprod.Estado + "')";
+            string consulta = "insert into tipoprod values('" + tipoprod.Nombre + "','Activo')";
             conexion.Ejecutar(consulta);
         }
         TipoProd p = new TipoProd();

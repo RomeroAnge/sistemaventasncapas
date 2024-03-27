@@ -16,6 +16,12 @@ namespace SistemasVentas.DAL
             DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return lista;
         }
+        public DataTable UsuarioDatosDal()
+        {
+            string consulta = "SELECT    USUARIO.IDUSUARIO, (PERSONA.NOMBRE+' '+PERSONA.APELLIDO)NOMBRECOMPLETO, USUARIO.NOMBREUSER, ROL.NOMBRE AS NOMBREROL, USUARIOROL.FECHAASIGNA\r\nFROM         PERSONA INNER JOIN\r\n                      USUARIO ON PERSONA.IDPERSONA = USUARIO.IDPERSONA INNER JOIN\r\n                      USUARIOROL ON USUARIO.IDUSUARIO = USUARIOROL.IDUSUARIO INNER JOIN\r\n                      ROL ON USUARIOROL.IDROL = ROL.IDROL";
+            DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
+            return lista;
+        }
         public void InsertarUsuarioDal(Usuario usuario)
         {
             string consulta = "insert into usuario values (" + usuario.IdPersona + ",' "
