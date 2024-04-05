@@ -38,6 +38,7 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(0, 192, 0);
+            button1.DialogResult = DialogResult.OK;
             button1.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
             button1.Location = new Point(513, 43);
@@ -46,10 +47,12 @@
             button1.TabIndex = 36;
             button1.Text = "✓";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(192, 0, 0);
+            button2.DialogResult = DialogResult.Cancel;
             button2.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
             button2.Location = new Point(4, 43);

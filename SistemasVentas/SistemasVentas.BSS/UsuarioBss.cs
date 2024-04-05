@@ -16,13 +16,21 @@ namespace SistemasVentas.BSS
         {
             return dal.ListarUsuarioDal();
         }
+        public string LoginUsuariosBss(string user, string contraseña)
+        {
+            return dal.LoginUsuariosDal(user, contraseña);
+        }
+        public int ObtenerUsuarioIdPorNombreBss(string nombre)
+        {
+            return dal.ObtenerUsuarioIdPorNombreDal(nombre);
+        }
         public DataTable UsuarioDatosBss()
         {
             return dal.UsuarioDatosDal();
         }
-        public void InsertarUsuarioBss(Usuario usuario)
+        public int InsertarUsuarioBss(Usuario usuario)
         {
-           dal.InsertarUsuarioDal(usuario);
+           return dal.InsertarUsuarioDal(usuario);
         }
         public Usuario ObtenerUsuarioIdBss(int id)
         {

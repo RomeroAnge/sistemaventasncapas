@@ -12,7 +12,9 @@ namespace SistemasVentas.DAL
     {
         public DataTable ListarUsuarioDal()
         {
-            string consulta = "select * from usuario";
+            string consulta = "SELECT    USUARIO.IDUSUARIO, (PERSONA.NOMBRE+' '+PERSONA.APELLIDO)NOMBRECOMPLETO, USUARIO.NOMBREUSER, USUARIO.CONTRASEÑA, USUARIO.FECHAREG " +
+                                "FROM         USUARIO INNER JOIN" +
+                                "                      PERSONA ON USUARIO.IDPERSONA = PERSONA.IDPERSONA";
             DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return lista;
         }
@@ -22,13 +24,33 @@ namespace SistemasVentas.DAL
             DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return lista;
         }
-        public void InsertarUsuarioDal(Usuario usuario)
+        public string LoginUsuariosDal(string user, string contraseña)
         {
-            string consulta = "insert into usuario values (" + usuario.IdPersona + ",' "
-                                                          + usuario.NombreUser + "',' "
-                                                          + usuario.Contraseña + "','"
+            string consulta = "SELECT    (USUARIOROL.ESTADO)ESTADO\r\nFROM         USUARIO INNER JOIN\r\n                      USUARIOROL ON USUARIO.IDUSUARIO = USUARIOROL.IDUSUARIO\r\nwhere nombreuser = '"+user+"' and contraseña = '"+contraseña+"'";
+            DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
+            if (lista.Rows.Count>0)
+            {
+                return (lista.Rows[0]["estado"]).ToString(); ;
+            }
+            return "0";
+        }
+        public int ObtenerUsuarioIdPorNombreDal(string nombre)
+        {
+            string consulta = "SELECT idusuario FROM USUARIO where NOMBREUSER = '"+nombre+"'";
+            DataTable tabla = conexion.EjecutarDataTabla(consulta, "tabla");
+
+                return   Convert.ToInt32(tabla.Rows[0]["idusuario"]);
+
+        }
+        public int InsertarUsuarioDal(Usuario usuario)
+        {
+            string consulta = "insert into usuario values (" + usuario.IdPersona + ",'"
+                                                          + usuario.NombreUser +"','"
+                                                          + usuario.Contraseña +"','"
                                                           + usuario.FechaReg + "')";
             conexion.Ejecutar(consulta);
+            string consulta2 = "select max(idusuario) from usuario";
+            return conexion.EjecutarEscalar(consulta2);
         }
         Usuario p = new Usuario();
         public Usuario ObtenerUsuarioIdDal(int id)
@@ -47,8 +69,7 @@ namespace SistemasVentas.DAL
         }
         public void EditarUsuarioDal(Usuario p)
         {
-            string consulta = "update usuario set idpersona=" + p.IdPersona + "," +
-                                                        "nombreuser='" + p.NombreUser + "'," +
+            string consulta = "update usuario set nombreuser='" + p.NombreUser + "'," +
                                                         "contraseña='" + p.Contraseña+ "'," +
                                                         "fechareg='" + p.FechaReg + "' " +
                                                 "where idusuario=" + p.IdUsuario;

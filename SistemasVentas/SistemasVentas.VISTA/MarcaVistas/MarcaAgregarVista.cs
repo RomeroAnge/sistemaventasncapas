@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,13 @@ namespace SistemasVentas.VISTA.MarcaVistas
         public MarcaAgregarVista()
         {
             InitializeComponent();
+        }
+        MarcaBss marcabss = new MarcaBss();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Marca marca = new Marca();
+            marca.Nombre = textBox1.Text;
+            marcabss.InsertarMarcaBss(marca);
         }
     }
 }

@@ -12,9 +12,13 @@ namespace SistemasVentas.BSS
     public class TipoProdBss
     {
         TipoProdDal dal = new TipoProdDal();
-        public DataTable ListarTipoProdBss()
+        public DataTable ListarTipoProdBss(string a)
         {
-            return dal.ListarTipoProdDal();
+            return dal.ListarTipoProdDal(a);
+        }
+        public string CategoriaTotalBss()
+        {
+            return dal.CategoriaTotalDal();
         }
         public void InsertarTipoProdBss(TipoProd tipoprod)
         {

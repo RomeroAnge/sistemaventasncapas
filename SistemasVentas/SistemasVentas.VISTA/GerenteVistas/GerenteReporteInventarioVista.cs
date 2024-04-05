@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using SistemasVentas.VISTA.VendedorVistas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,11 @@ namespace SistemasVentas.VISTA.GerenteVistas
         public GerenteReporteInventarioVista()
         {
             InitializeComponent();
+        }
+        ProductoBss productosbss = new ProductoBss();
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = productosbss.ListarProductosGeneralBss(dateTimePicker1.Value, dateTimePicker2.Value);
         }
     }
 }

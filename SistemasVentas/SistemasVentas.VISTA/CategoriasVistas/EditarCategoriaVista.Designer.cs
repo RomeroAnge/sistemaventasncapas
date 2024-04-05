@@ -32,9 +32,7 @@
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
-            label3 = new Label();
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // label2
@@ -88,18 +86,6 @@
             button2.Text = "✕";
             button2.UseVisualStyleBackColor = false;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(45, 208);
-            label3.Name = "label3";
-            label3.Size = new Size(220, 27);
-            label3.TabIndex = 27;
-            label3.Text = "Cambie el estado";
-            // 
             // textBox1
             // 
             textBox1.BackColor = Color.White;
@@ -112,27 +98,13 @@
             textBox1.Size = new Size(473, 34);
             textBox1.TabIndex = 33;
             // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.White;
-            textBox2.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.ForeColor = SystemColors.WindowText;
-            textBox2.Location = new Point(45, 238);
-            textBox2.Name = "textBox2";
-            textBox2.RightToLeft = RightToLeft.No;
-            textBox2.ScrollBars = ScrollBars.Horizontal;
-            textBox2.Size = new Size(473, 34);
-            textBox2.TabIndex = 34;
-            // 
             // EditarCategoriaVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(571, 334);
             ControlBox = false;
-            Controls.Add(textBox2);
             Controls.Add(textBox1);
-            Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(button2);
             Controls.Add(label1);
@@ -151,8 +123,6 @@
         private Label label1;
         private Button button1;
         private Button button2;
-        private Label label3;
         private TextBox textBox1;
-        private TextBox textBox2;
     }
 }

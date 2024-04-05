@@ -18,8 +18,7 @@ namespace SistemasVentas.DAL
         }
         public void InsertarRolDal(Rol rol)
         {
-            string consulta = "insert into rol values('" + rol.Nombre + "','"
-                                                      + rol.Estado + "')";
+            string consulta = "insert into rol values('" + rol.Nombre + "','Activo')";
             conexion.Ejecutar(consulta);
         }
         Rol p = new Rol();
@@ -32,6 +31,21 @@ namespace SistemasVentas.DAL
                 p.IdRol = Convert.ToInt32(tabla.Rows[0]["idrol"]);
                 p.Nombre = tabla.Rows[0]["nombre"].ToString();
                 p.Estado = tabla.Rows[0]["estado"].ToString();
+            }
+            return p;
+        }
+        public Rol ObtenerRolDal(string user, string contra)
+        {
+            string consulta = "SELECT    (ROL.NOMBRE)ROL " +
+                "FROM         ROL INNER JOIN" +
+                "                      USUARIOROL ON ROL.IDROL = USUARIOROL.IDROL INNER JOIN" +
+                "                      USUARIO ON USUARIOROL.IDUSUARIO = USUARIO.IDUSUARIO " +
+                "WHERE  usuario.nombreuser = '"+user+"' and usuario.contraseña = '"+contra+"' ";
+            DataTable tabla = conexion.EjecutarDataTabla(consulta, "asdas");
+            if (tabla.Rows.Count > 0)
+            {
+                p.Nombre = tabla.Rows[0]["ROL"].ToString();
+
             }
             return p;
         }

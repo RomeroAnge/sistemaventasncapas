@@ -12,9 +12,22 @@ namespace SistemasVentas.BSS
     public class ProductoBss
     {
         ProductoDal dal = new ProductoDal();
-        public DataTable ListarProductoBss()
+        public DataTable ListarProductoBss(string x)
         {
-            return dal.ListarProductoDal();
+            return dal.ListarProductoDal(x);
+        }
+        public string DatosProductosBss()
+        {
+            return dal.DatosProductosDal();
+        }
+        public DataTable ProductoDatosBss(string a,string b)
+        {
+            return dal.ProductoDatosDal(a,b);
+        }
+
+        public DataTable ListarProductosGeneralBss(DateTime a, DateTime b)
+        {
+            return dal.ListarProductosGeneralDal(a, b);
         }
         public void InsertarProductoBss(Producto producto)
         {
@@ -27,6 +40,10 @@ namespace SistemasVentas.BSS
         public void EditarProductoBss(Producto p)
         {
             dal.EditarProductoDal(p);
+        }
+        public void EditarProductoXBss(Producto p)
+        {
+            dal.EditarProductoXDal(p);
         }
         public void EliminarProductoBss(int id)
         {

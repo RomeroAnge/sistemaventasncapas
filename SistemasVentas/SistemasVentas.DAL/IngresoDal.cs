@@ -12,7 +12,9 @@ namespace SistemasVentas.DAL
     {
         public DataTable ListarIngresoDal()
         {
-            string consulta = "select * from ingreso";
+            string consulta = "SELECT    INGRESO.IDINGRESO, (PROVEEDOR.NOMBRE)PROVEEDOR, INGRESO.FECHAINGRESO, INGRESO.TOTAL, INGRESO.ESTADO " +
+                "FROM         PROVEEDOR INNER JOIN" +
+                "                      INGRESO ON PROVEEDOR.IDPROVEEDOR = INGRESO.IDPROVEEDOR";
             DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return lista;
         }

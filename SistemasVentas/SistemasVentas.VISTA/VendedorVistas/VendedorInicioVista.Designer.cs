@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VendedorInicioVista));
-            panel1 = new Panel();
-            label1 = new Label();
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
             label4 = new Label();
@@ -39,35 +37,11 @@
             pictureBox3 = new PictureBox();
             label5 = new Label();
             label3 = new Label();
-            button5 = new Button();
-            panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(11, 19, 46);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(-9, -9);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(650, 70);
-            panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLight;
-            label1.Location = new Point(99, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 27);
-            label1.TabIndex = 3;
-            label1.Text = "Inicio";
             // 
             // panel3
             // 
@@ -75,7 +49,7 @@
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(12, 77);
+            panel3.Location = new Point(12, 14);
             panel3.Name = "panel3";
             panel3.Size = new Size(293, 145);
             panel3.TabIndex = 2;
@@ -95,7 +69,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.ControlLight;
+            label4.ForeColor = Color.Cyan;
             label4.Location = new Point(176, 86);
             label4.Name = "label4";
             label4.Size = new Size(38, 27);
@@ -117,10 +91,10 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(11, 19, 46);
+            panel2.Controls.Add(label3);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(label5);
-            panel2.Controls.Add(label3);
-            panel2.Location = new Point(327, 77);
+            panel2.Location = new Point(327, 14);
             panel2.Name = "panel2";
             panel2.Size = new Size(293, 145);
             panel2.TabIndex = 3;
@@ -140,8 +114,8 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ControlLight;
-            label5.Location = new Point(149, 86);
+            label5.ForeColor = Color.Cyan;
+            label5.Location = new Point(138, 98);
             label5.Name = "label5";
             label5.Size = new Size(51, 27);
             label5.TabIndex = 6;
@@ -153,25 +127,11 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlLight;
-            label3.Location = new Point(149, 24);
+            label3.Location = new Point(138, 10);
             label3.Name = "label3";
-            label3.Size = new Size(129, 54);
-            label3.TabIndex = 5;
-            label3.Text = "Total\r\nProductos";
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(11, 19, 46);
-            button5.FlatAppearance.BorderColor = Color.FromArgb(11, 19, 46);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Image = Properties.Resources.icons8_menú_40;
-            button5.Location = new Point(18, 16);
-            button5.Margin = new Padding(0);
-            button5.Name = "button5";
-            button5.Size = new Size(53, 49);
-            button5.TabIndex = 5;
-            button5.UseVisualStyleBackColor = false;
+            label3.Size = new Size(155, 81);
+            label3.TabIndex = 7;
+            label3.Text = "Total\r\nProductos\r\nDisponibles\r\n";
             // 
             // VendedorInicioVista
             // 
@@ -181,12 +141,10 @@
             ControlBox = false;
             Controls.Add(panel2);
             Controls.Add(panel3);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "VendedorInicioVista";
             StartPosition = FormStartPosition.CenterScreen;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            Load += VendedorInicioVista_Load;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -197,17 +155,13 @@
         }
 
         #endregion
-
-        private Panel panel1;
         private Panel panel3;
-        private Label label1;
         private Panel panel2;
         private Label label4;
         private Label label2;
         private Label label5;
-        private Label label3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
-        private Button button5;
+        private Label label3;
     }
 }

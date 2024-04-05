@@ -26,7 +26,7 @@ namespace SistemasVentas.VISTA.CategoriasVistas
         private void button1_Click(object sender, EventArgs e)
         {
             p.Nombre = textBox1.Text;
-            p.Estado = textBox2.Text;
+
 
             bss.EditarTipoProdBss(p);
             MessageBox.Show("Se Editó correctamente");
@@ -36,7 +36,7 @@ namespace SistemasVentas.VISTA.CategoriasVistas
         {
             p = bss.ObtenerTipoProdIdBss(idx);
             textBox1.Text = p.Nombre;
-            textBox2.Text = p.Estado;
+
         }
     }
 }

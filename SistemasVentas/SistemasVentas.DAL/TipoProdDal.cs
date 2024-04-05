@@ -10,11 +10,25 @@ namespace SistemasVentas.DAL
 {
     public class TipoProdDal
     {
-        public DataTable ListarTipoProdDal()
+        public DataTable ListarTipoProdDal(string buscar)
         {
-            string consulta = "select * from tipoprod";
+            string consulta = "select * from tipoprod WHERE nombre LIKE '"+buscar+"%' and estado = 'Activo'";
             DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return lista;
+        }
+
+        public string CategoriaTotalDal()
+        {
+            string consulta = "SELECT COUNT(IDTIPOPROD)CATEGORIAS FROM TIPOPROD WHERE ESTADO = 'ACTIVO'";
+            DataTable tabla = conexion.EjecutarDataTabla(consulta, "tabla");
+            if (tabla.Rows.Count > 0)
+            {
+                return tabla.Rows[0]["categorias"].ToString();
+            }
+            else
+            {
+                return "0";
+            }
         }
         public void InsertarTipoProdDal(TipoProd tipoprod)
         {
@@ -37,13 +51,14 @@ namespace SistemasVentas.DAL
         public void EditarTipoProdDal(TipoProd p)
         {
             string consulta = "update tipoprod set nombre='" + p.Nombre + "'," +
-                                                        "estado='" + p.Estado + "' " +
+                                                        "estado='Activo' " +
                                                 "where idtipoprod=" + p.IdTipoProd;
             conexion.Ejecutar(consulta);
         }
         public void EliminarTipoProdDal(int id)
         {
-            string consulta = "delete from tipoprod where idtipoprod=" + id;
+            string consulta = "update tipoprod set estado='Inactivo' " +
+                                                "where idtipoprod=" + id;
             conexion.Ejecutar(consulta);
         }
     }

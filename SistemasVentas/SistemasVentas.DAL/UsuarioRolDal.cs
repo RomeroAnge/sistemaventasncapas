@@ -10,19 +10,43 @@ namespace SistemasVentas.DAL
 {
     public class UsuarioRolDal
     {
-        public DataTable ListarUsuarioRolDal()
+
+        public DataTable ListarUsuarioRolXDal(string rol, string user)
         {
-            string consulta = "select * from usuariorol";
+            string consulta = "SELECT    USUARIO.IDUSUARIO,USUARIOROL.IDUSUARIOROL,PERSONA.NOMBRE, PERSONA.APELLIDO, USUARIO.NOMBREUSER, USUARIO.CONTRASEÑA, USUARIO.FECHAREG, ROL.NOMBRE AS Expr1, ROL.ESTADO, USUARIOROL.FECHAASIGNA\r\nFROM         PERSONA INNER JOIN\r\n                      USUARIO ON PERSONA.IDPERSONA = USUARIO.IDPERSONA INNER JOIN\r\n                      USUARIOROL ON USUARIO.IDUSUARIO = USUARIOROL.IDUSUARIO INNER JOIN\r\n                      ROL ON USUARIOROL.IDROL = ROL.IDROL  WHERE ROL.NOMBRE LIKE '" + rol + "%' AND USUARIO.NOMBREUSER LIKE '" + user + "%'";
             DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return lista;
+        }
+        public DataTable ListarUsuarioRolDal()
+        {
+            string consulta = "SELECT    USUARIOROL.IDUSUARIOROL, USUARIO.NOMBREUSER, (ROL.NOMBRE)ROL, USUARIOROL.FECHAASIGNA, USUARIOROL.ESTADO " +
+                "FROM         USUARIO INNER JOIN                     USUARIOROL ON USUARIO.IDUSUARIO = USUARIOROL.IDUSUARIO INNER JOIN" +
+                "                      ROL ON USUARIOROL.IDROL = ROL.IDROL";
+            DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
+            return lista;
+        }
+        public string UsuariosActivosInactivosDal(string opcion)
+        {
+            string consulta = "SELECT    count(USUARIO.IDUSUARIO)CANTIDAD\r\nFROM         USUARIO INNER JOIN\r\n                      USUARIOROL ON USUARIO.IDUSUARIO = USUARIOROL.IDUSUARIO INNER JOIN\r\n                      ROL ON USUARIOROL.IDROL = ROL.IDROL\r\nWHERE USUARIOROL.ESTADO = '"+opcion+"'";
+            
+            
+            DataTable tabla = conexion.EjecutarDataTabla(consulta, "tabla");
+            if (tabla.Rows.Count > 0)
+            {
+                return tabla.Rows[0]["cantidad"].ToString();
+            }
+            else
+            {
+                return "0";
+            }
         }
         public void InsertarUsuarioRolDal(UsuarioRol usuariorol)
         {
             string consulta = "insert into usuariorol values (" + usuariorol.IdUsuario + ","
                                                           + usuariorol.IdRol + ",' "
-                                                          + usuariorol.FechaAsigna + "','"
-                                                          + usuariorol.Estado + "')";
+                                                          + usuariorol.FechaAsigna + "','Activo')";
             conexion.Ejecutar(consulta);
+
         }
         UsuarioRol p = new UsuarioRol();
         public UsuarioRol ObtenerUsuarioRolIdDal(int id)

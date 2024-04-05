@@ -15,7 +15,7 @@ namespace SistemasVentas.DAL
             DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return lista;
         }
-        public void InsertarPersonaDal(Persona persona)
+        public int InsertarPersonaDal(Persona persona)
         {
             string consulta = "insert into persona values('"+persona.Nombre+"',"+
                                                          "'"+persona.Apellido+"',"+
@@ -24,6 +24,8 @@ namespace SistemasVentas.DAL
                                                          "'" + persona.Correo + "'," +
                                                          "'Activo')";
             conexion.Ejecutar(consulta);
+            string consulta2 = "select max(idpersona) from persona";
+            return conexion.EjecutarEscalar(consulta2);
         }
         Persona p = new Persona();
         public Persona ObtenerPersonaIdDal(int id)

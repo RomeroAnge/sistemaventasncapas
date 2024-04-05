@@ -12,17 +12,21 @@ namespace SistemasVentas.DAL
     {
         public DataTable ListarClienteDal()
         {
-            string consulta = "select * from cliente";
+            string consulta = "SELECT    CLIENTE.IDCLIENTE, (PERSONA.NOMBRE+' '+ PERSONA.APELLIDO)NOMBRECOMPLETO, CLIENTE.TIPOCLIENTE, CLIENTE.CODIGOCLIENTE, CLIENTE.ESTADO " +
+                "FROM         CLIENTE INNER JOIN" +
+                "                      PERSONA ON CLIENTE.IDPERSONA = PERSONA.IDPERSONA";
             DataTable lista = conexion.EjecutarDataTabla(consulta, "tabla");
             return lista;
         }
-        public void InsertarClienteDal(Cliente cliente)
+        public int InsertarClienteDal(Cliente cliente)
         {
             string consulta = "insert into cliente values("+ cliente.IdPersona +"," +
                                                                      "'" + cliente.TipoCliente + "'," +
                                                                      "'" + cliente.CodigoClie + "'," +
                                                                      "'Activo')";
             conexion.Ejecutar(consulta);
+            string consulta2 = "select max(idcliente) from cliente";
+            return conexion.EjecutarEscalar(consulta2);
         }
         Cliente p = new Cliente();
         public Cliente ObtenerClienteIdDal(int id)

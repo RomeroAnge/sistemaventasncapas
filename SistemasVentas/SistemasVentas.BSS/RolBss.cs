@@ -20,6 +20,10 @@ namespace SistemasVentas.BSS
         {
             dal.InsertarRolDal(rol);
         }
+        public Rol ObtenerRolBss(string user, string contraseña)
+        {
+            return dal.ObtenerRolDal(user, contraseña);
+        }
         public Rol ObtenerRolIdBss(int id)
         {
             return dal.ObtenerRolIdDal(id);

@@ -36,6 +36,7 @@
             textBox2 = new TextBox();
             button1 = new Button();
             button2 = new Button();
+            checkBox1 = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -90,7 +91,6 @@
             textBox2.ForeColor = SystemColors.WindowText;
             textBox2.Location = new Point(126, 354);
             textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
             textBox2.PlaceholderText = "Contraseña";
             textBox2.Size = new Size(384, 34);
             textBox2.TabIndex = 5;
@@ -108,6 +108,7 @@
             button1.TabIndex = 6;
             button1.Text = "Iniciar Sesión";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -122,6 +123,18 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.Appearance = Appearance.Button;
+            checkBox1.AutoSize = true;
+            checkBox1.Image = Properties.Resources.icons8_ojo_40__1_;
+            checkBox1.Location = new Point(516, 354);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(41, 41);
+            checkBox1.TabIndex = 9;
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // LoginUser
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -129,6 +142,7 @@
             BackColor = Color.White;
             ClientSize = new Size(648, 508);
             ControlBox = false;
+            Controls.Add(checkBox1);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox2);
@@ -140,6 +154,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "LoginUser";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += LoginUser_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -154,5 +169,6 @@
         private TextBox textBox2;
         private Button button1;
         private Button button2;
+        private CheckBox checkBox1;
     }
 }

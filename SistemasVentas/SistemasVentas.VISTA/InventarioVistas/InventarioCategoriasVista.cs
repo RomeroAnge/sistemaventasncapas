@@ -26,34 +26,56 @@ namespace SistemasVentas.VISTA.InventarioVistas
             AgregarCategoriaVista fr = new AgregarCategoriaVista();
             if (fr.ShowDialog() == DialogResult.OK)
             {
-                dataGridView1.DataSource = bss.ListarTipoProdBss();
+                dataGridView1.DataSource = bss.ListarTipoProdBss(textBox1.Text);
             }
         }
 
         private void InventarioCategoriasVista_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = bss.ListarTipoProdBss();
+            dataGridView1.DataSource = bss.ListarTipoProdBss("");
+            int n = dataGridView1.Columns.Count - 1;
+            dataGridView1.Columns["Eliminar"].DisplayIndex = n;
+            dataGridView1.Columns["Editar"].DisplayIndex = n;
+            dataGridView1.Columns["Eliminar"].Width =70;
+            dataGridView1.Columns["Editar"].Width = 70;
+
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int IdSeleccionada = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            EditarCategoriaVista fr = new EditarCategoriaVista(IdSeleccionada);
-            if (fr.ShowDialog() == DialogResult.OK)
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Editar")
             {
-                dataGridView1.DataSource = bss.ListarTipoProdBss();
+                int IdSeleccionada = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IDTIPOPROD"].Value.ToString());
+                EditarCategoriaVista fr = new EditarCategoriaVista(IdSeleccionada);
+                if (fr.ShowDialog() == DialogResult.OK)
+                {
+                    dataGridView1.DataSource = bss.ListarTipoProdBss(textBox1.Text);
+                    textBox1.Text = string.Empty;
+                }
+            }
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                int IdSeleccionada = Convert.ToInt32(dataGridView1.CurrentRow.Cells["IDTIPOPROD"].Value);
+                DialogResult result = MessageBox.Show("¿Desea Eliminar esta Categoria?", "Eliminando", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    bss.EliminarTipoProdBss(IdSeleccionada);
+                    textBox1.Text = string.Empty;
+                    dataGridView1.DataSource = bss.ListarTipoProdBss(textBox1.Text);
+                }
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            int IdSeleccionada = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            DialogResult result = MessageBox.Show("¿Desea Eliminar esta Categoria?", "Eliminando", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                bss.EliminarTipoProdBss(IdSeleccionada);
-                dataGridView1.DataSource = bss.ListarTipoProdBss();
-            }
+            dataGridView1.DataSource = bss.ListarTipoProdBss(textBox1.Text);
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = bss.ListarTipoProdBss(textBox1.Text);
         }
     }
 }

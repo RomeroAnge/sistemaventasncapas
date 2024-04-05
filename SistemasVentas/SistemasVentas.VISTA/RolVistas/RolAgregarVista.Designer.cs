@@ -33,28 +33,29 @@
             textBox1 = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            textBox2 = new TextBox();
-            label3 = new Label();
             SuspendLayout();
             // 
             // button1
             // 
             button1.BackColor = Color.FromArgb(0, 192, 0);
+            button1.DialogResult = DialogResult.OK;
             button1.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(516, 14);
+            button1.Location = new Point(507, 14);
             button1.Name = "button1";
             button1.Size = new Size(38, 38);
             button1.TabIndex = 41;
             button1.Text = "✓";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(192, 0, 0);
+            button2.DialogResult = DialogResult.Cancel;
             button2.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(7, 14);
+            button2.Location = new Point(12, 14);
             button2.Name = "button2";
             button2.Size = new Size(38, 38);
             button2.TabIndex = 40;
@@ -94,35 +95,12 @@
             label2.TabIndex = 37;
             label2.Text = "Agregar Rol";
             // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(169, 154);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(355, 27);
-            textBox2.TabIndex = 43;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(33, 154);
-            label3.Name = "label3";
-            label3.Size = new Size(142, 27);
-            label3.TabIndex = 42;
-            label3.Text = "Permisos: ";
-            // 
             // RolAgregarVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(557, 260);
+            ClientSize = new Size(557, 196);
             ControlBox = false;
-            Controls.Add(textBox2);
-            Controls.Add(label3);
             Controls.Add(button1);
             Controls.Add(button2);
             Controls.Add(textBox1);
@@ -142,7 +120,5 @@
         private TextBox textBox1;
         private Label label1;
         private Label label2;
-        private TextBox textBox2;
-        private Label label3;
     }
 }

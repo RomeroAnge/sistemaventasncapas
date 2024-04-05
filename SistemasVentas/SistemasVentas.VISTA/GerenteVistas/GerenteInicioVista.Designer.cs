@@ -40,8 +40,6 @@
             label4 = new Label();
             pictureBox1 = new PictureBox();
             label2 = new Label();
-            panel1 = new Panel();
-            label1 = new Label();
             panel4 = new Panel();
             pictureBox4 = new PictureBox();
             label6 = new Label();
@@ -50,12 +48,10 @@
             pictureBox5 = new PictureBox();
             label8 = new Label();
             label9 = new Label();
-            button5 = new Button();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
             panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel5.SuspendLayout();
@@ -70,7 +66,7 @@
             panel2.Controls.Add(label11);
             panel2.Controls.Add(pictureBox3);
             panel2.Controls.Add(label3);
-            panel2.Location = new Point(326, 246);
+            panel2.Location = new Point(323, 170);
             panel2.Name = "panel2";
             panel2.Size = new Size(302, 145);
             panel2.TabIndex = 9;
@@ -80,7 +76,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.Transparent;
             label12.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.ForeColor = SystemColors.ControlLight;
+            label12.ForeColor = Color.Cyan;
             label12.Location = new Point(234, 68);
             label12.Name = "label12";
             label12.Size = new Size(38, 27);
@@ -92,7 +88,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ControlLight;
+            label5.ForeColor = Color.Cyan;
             label5.Location = new Point(149, 70);
             label5.Name = "label5";
             label5.Size = new Size(51, 27);
@@ -140,7 +136,7 @@
             panel3.Controls.Add(label4);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(label2);
-            panel3.Location = new Point(326, 86);
+            panel3.Location = new Point(323, 10);
             panel3.Name = "panel3";
             panel3.Size = new Size(302, 145);
             panel3.TabIndex = 8;
@@ -150,7 +146,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
             label10.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.ForeColor = SystemColors.ControlLight;
+            label10.ForeColor = Color.Cyan;
             label10.Location = new Point(260, 86);
             label10.Name = "label10";
             label10.Size = new Size(25, 27);
@@ -162,7 +158,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.ForeColor = SystemColors.ControlLight;
+            label4.ForeColor = Color.Cyan;
             label4.Location = new Point(240, 59);
             label4.Name = "label4";
             label4.Size = new Size(38, 27);
@@ -191,35 +187,13 @@
             label2.TabIndex = 4;
             label2.Text = "Usuarios\r\nActivo:\r\nInactivos:";
             // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(11, 19, 46);
-            panel1.Controls.Add(button5);
-            panel1.Controls.Add(label1);
-            panel1.Location = new Point(-9, -1);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(650, 70);
-            panel1.TabIndex = 7;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLight;
-            label1.Location = new Point(99, 25);
-            label1.Name = "label1";
-            label1.Size = new Size(90, 27);
-            label1.TabIndex = 3;
-            label1.Text = "Inicio";
-            // 
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(11, 19, 46);
             panel4.Controls.Add(pictureBox4);
             panel4.Controls.Add(label6);
             panel4.Controls.Add(label7);
-            panel4.Location = new Point(12, 246);
+            panel4.Location = new Point(9, 170);
             panel4.Name = "panel4";
             panel4.Size = new Size(293, 145);
             panel4.TabIndex = 10;
@@ -239,7 +213,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.ForeColor = SystemColors.ControlLight;
+            label6.ForeColor = Color.Cyan;
             label6.Location = new Point(176, 86);
             label6.Name = "label6";
             label6.Size = new Size(38, 27);
@@ -264,7 +238,7 @@
             panel5.Controls.Add(pictureBox5);
             panel5.Controls.Add(label8);
             panel5.Controls.Add(label9);
-            panel5.Location = new Point(12, 86);
+            panel5.Location = new Point(9, 10);
             panel5.Name = "panel5";
             panel5.Size = new Size(293, 145);
             panel5.TabIndex = 11;
@@ -284,7 +258,7 @@
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = SystemColors.ControlLight;
+            label8.ForeColor = Color.Cyan;
             label8.Location = new Point(176, 86);
             label8.Name = "label8";
             label8.Size = new Size(103, 27);
@@ -303,20 +277,6 @@
             label9.TabIndex = 4;
             label9.Text = "Total\r\nIngresos";
             // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(11, 19, 46);
-            button5.FlatAppearance.BorderColor = Color.FromArgb(11, 19, 46);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Image = Properties.Resources.icons8_menú_40;
-            button5.Location = new Point(21, 10);
-            button5.Margin = new Padding(0);
-            button5.Name = "button5";
-            button5.Size = new Size(53, 49);
-            button5.TabIndex = 5;
-            button5.UseVisualStyleBackColor = false;
-            // 
             // GerenteInicioVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -327,18 +287,16 @@
             Controls.Add(panel4);
             Controls.Add(panel2);
             Controls.Add(panel3);
-            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "GerenteInicioVista";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += GerenteInicioVista_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -357,8 +315,6 @@
         private Panel panel3;
         private PictureBox pictureBox1;
         private Label label2;
-        private Panel panel1;
-        private Label label1;
         private Label label10;
         private Label label4;
         private Panel panel4;
@@ -371,6 +327,5 @@
         private Label label9;
         private Label label12;
         private Label label11;
-        private Button button5;
     }
 }

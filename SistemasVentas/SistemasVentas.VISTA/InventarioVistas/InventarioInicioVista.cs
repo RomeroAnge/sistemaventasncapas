@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemasVentas.BSS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace SistemasVentas.VISTA.InventarioVistas
         public InventarioInicioVista()
         {
             InitializeComponent();
+        }
+        ProductoBss probss = new ProductoBss();
+        TipoProdBss tipoprobss = new TipoProdBss(); 
+        private void InventarioInicioVista_Load(object sender, EventArgs e)
+        {
+            label5.Text = probss.DatosProductosBss();
+            label4.Text = tipoprobss.CategoriaTotalBss();
         }
     }
 }

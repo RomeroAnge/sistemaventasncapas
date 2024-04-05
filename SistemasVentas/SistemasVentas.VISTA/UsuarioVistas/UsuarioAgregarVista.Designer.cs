@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UsuarioAgregarVista));
-            button5 = new Button();
             button6 = new Button();
-            button3 = new Button();
             button4 = new Button();
             textBox7 = new TextBox();
             textBox5 = new TextBox();
@@ -52,16 +50,6 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(11, 19, 46);
-            button5.Image = (Image)resources.GetObject("button5.Image");
-            button5.Location = new Point(510, 14);
-            button5.Name = "button5";
-            button5.Size = new Size(45, 45);
-            button5.TabIndex = 98;
-            button5.UseVisualStyleBackColor = false;
-            // 
             // button6
             // 
             button6.BackColor = Color.FromArgb(11, 19, 46);
@@ -71,35 +59,28 @@
             button6.Size = new Size(45, 45);
             button6.TabIndex = 97;
             button6.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(11, 19, 46);
-            button3.Image = (Image)resources.GetObject("button3.Image");
-            button3.Location = new Point(567, 118);
-            button3.Name = "button3";
-            button3.Size = new Size(45, 45);
-            button3.TabIndex = 96;
-            button3.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button4
             // 
             button4.BackColor = Color.FromArgb(11, 19, 46);
             button4.Image = (Image)resources.GetObject("button4.Image");
-            button4.Location = new Point(519, 118);
+            button4.Location = new Point(567, 118);
             button4.Name = "button4";
             button4.Size = new Size(45, 45);
             button4.TabIndex = 95;
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // textBox7
             // 
             textBox7.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(200, 188);
-            textBox7.Multiline = true;
+            textBox7.Location = new Point(200, 196);
             textBox7.Name = "textBox7";
-            textBox7.Size = new Size(412, 24);
+            textBox7.PasswordChar = '*';
+            textBox7.Size = new Size(412, 34);
             textBox7.TabIndex = 85;
+            textBox7.UseSystemPasswordChar = true;
             // 
             // textBox5
             // 
@@ -117,7 +98,7 @@
             textBox4.Location = new Point(200, 158);
             textBox4.Multiline = true;
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(412, 24);
+            textBox4.Size = new Size(412, 32);
             textBox4.TabIndex = 82;
             // 
             // label6
@@ -183,10 +164,10 @@
             // textBox2
             // 
             textBox2.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(200, 128);
+            textBox2.Location = new Point(200, 118);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(302, 24);
+            textBox2.Size = new Size(347, 34);
             textBox2.TabIndex = 75;
             // 
             // label1
@@ -204,21 +185,24 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(0, 192, 0);
+            button1.DialogResult = DialogResult.OK;
             button1.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(596, 54);
+            button1.Location = new Point(539, 58);
             button1.Name = "button1";
             button1.Size = new Size(38, 35);
             button1.TabIndex = 73;
             button1.Text = "✓";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(192, 0, 0);
+            button2.DialogResult = DialogResult.Cancel;
             button2.Font = new Font("Consolas", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(-1, 54);
+            button2.Location = new Point(65, 58);
             button2.Name = "button2";
             button2.Size = new Size(38, 35);
             button2.TabIndex = 72;
@@ -229,13 +213,13 @@
             // 
             panel1.BackColor = Color.FromArgb(11, 19, 46);
             panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(button5);
             panel1.Controls.Add(button6);
             panel1.Controls.Add(label6);
-            panel1.Location = new Point(43, 381);
+            panel1.Location = new Point(40, 334);
             panel1.Name = "panel1";
             panel1.Size = new Size(572, 70);
             panel1.TabIndex = 99;
+            panel1.Visible = false;
             // 
             // label5
             // 
@@ -259,6 +243,7 @@
             button7.TabIndex = 101;
             button7.Text = "Sí";
             button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
             // 
             // button8
             // 
@@ -270,18 +255,18 @@
             button8.TabIndex = 102;
             button8.Text = "No";
             button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
             // 
             // UsuarioAgregarVista
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(632, 463);
+            ClientSize = new Size(632, 438);
             ControlBox = false;
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(label5);
             Controls.Add(panel1);
-            Controls.Add(button3);
             Controls.Add(button4);
             Controls.Add(textBox7);
             Controls.Add(textBox4);
@@ -303,10 +288,7 @@
         }
 
         #endregion
-
-        private Button button5;
         private Button button6;
-        private Button button3;
         private Button button4;
         private TextBox textBox7;
         private TextBox textBox5;

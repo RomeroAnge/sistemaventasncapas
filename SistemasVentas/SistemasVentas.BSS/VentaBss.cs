@@ -16,10 +16,31 @@ namespace SistemasVentas.BSS
         {
             return dal.ListarVentaDal();
         }
-        public void InsertarVentaBss(Venta venta)
+        public DataTable ListarVentaPorVendedorBss(DateTime a, DateTime b, int Id)
         {
-           dal.InsertarVentaDal(venta);
+            return dal.ListarVentaPorVendedorDal(a,b,Id);
         }
+        public DataTable ListarVentaGeneralBss(DateTime a, DateTime b)
+        {
+            return dal.ListarVentaGeneralDal(a, b);
+        }
+        public string IngresosTotalBss()
+        {
+            return dal.IngresoTotalDal();
+        }
+        public string VentasPorVendedorBss(int id)
+        {
+            return dal.VentasPorVendedorDal(id);
+        }
+        public string VentasTotalBss()
+        {
+            return dal.VentasTotalDal();
+        }
+        public int InsertarVentaBss(Venta venta)
+        {
+           return dal.InsertarVentaDal(venta);
+        }
+
         public Venta ObtenerVentaIdBss(int id)
         {
             return dal.ObtenerVentaIdDal(id);
